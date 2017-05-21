@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GitHub Search</string>
+    <string name="loading_error_message">Woops.  We couldn\'t complete your search.  Check your internet connection and try again.</string>
+    <string name="action_share">Share repo</string>
+    <string name="action_view_repo">View this repo on GitHub</string>
+    <string name="share_chooser_title">Pick an app to share this repo</string>
+</resources>
