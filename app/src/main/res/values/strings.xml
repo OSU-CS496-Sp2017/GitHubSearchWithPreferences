@@ -4,4 +4,5 @@
     <string name="action_share">Share repo</string>
     <string name="action_view_repo">View this repo on GitHub</string>
     <string name="share_chooser_title">Pick an app to share this repo</string>
+    <string name="action_settings">Settings</string>
 </resources>
