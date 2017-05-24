@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$USER_HOME$/Google Drive/courses/cs496/2017_spring/scratch/GitHubSearchWithPreferences" />
+            <option value="$USER_HOME$/Google Drive/courses/cs496/2017_spring/scratch/GitHubSearchWithPreferences/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
