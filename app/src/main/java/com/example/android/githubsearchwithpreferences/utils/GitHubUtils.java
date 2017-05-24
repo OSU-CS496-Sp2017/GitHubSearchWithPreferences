@@ -1,6 +1,7 @@
 package com.example.android.githubsearchwithpreferences.utils;
 
 import android.net.Uri;
+import android.text.TextUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,29 +53,18 @@ public class GitHubUtils {
             queryValue += " " + GITHUB_SEARCH_USER_PARAM + ":" + user;
         }
 
-        /*
-         * The code below is a slightly complicated little block that does two things:
-         *   1. If all of searchInName, searchInDescription, and searchInReadme are false, specifies
-         *      that the name and description should be searched.
-         *   2. If any of those values are specified, builds up a comma-separated list of the
-         *      corresponding strings to specify what to search in.
-         */
-        queryValue += " " + GITHUB_SEARCH_IN_PARAM + ":";
-        if (!searchInName && !searchInDescription && !searchInReadme) {
-            queryValue += GITHUB_SEARCH_IN_NAME + "," + GITHUB_SEARCH_IN_DESCRIPTION;
-        } else {
-            String concatStr = "";
-            if (searchInName) {
-                queryValue += concatStr + GITHUB_SEARCH_IN_NAME;
-                concatStr = ",";
-            }
-            if (searchInDescription) {
-                queryValue += concatStr + GITHUB_SEARCH_IN_DESCRIPTION;
-                concatStr = ",";
-            }
-            if (searchInReadme) {
-                queryValue += concatStr + GITHUB_SEARCH_IN_README;
-            }
+        ArrayList searchIn = new ArrayList<String>();
+        if (searchInName) {
+            searchIn.add(GITHUB_SEARCH_IN_NAME);
+        }
+        if (searchInDescription) {
+            searchIn.add(GITHUB_SEARCH_IN_DESCRIPTION);
+        }
+        if (searchInReadme) {
+            searchIn.add(GITHUB_SEARCH_IN_README);
+        }
+        if (!searchIn.isEmpty()) {
+            queryValue += " " + GITHUB_SEARCH_IN_PARAM + ":" + TextUtils.join(",", searchIn);
         }
 
         builder.appendQueryParameter(GITHUB_SEARCH_QUERY_PARAM, queryValue);
